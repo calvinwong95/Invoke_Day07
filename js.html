@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #hp-bar {
+            width: 0px;
+            max-width: 200px;
+            height: 10px;
+            background-color: greenyellow;
+
+            transition: all 0.7s;
+        }
+    </style>
+    <title>Data Type</title>
+
+</head>
+<body>
+    <div id="container">
+        <p id="para"></p>
+        <h1 id="score1"></h1>
+
+        <button onclick="count(10 ,'green')">+</button>
+        <button onclick="count(-10 ,'red')">-</button>
+
+        <div id="hp-bar"></div>
+    </div>
+
+    <script>
+        var scoreText = document.getElementById('score1');
+        var hpBar = document.getElementById('hp-bar');
+        var score = 0;
+
+        scoreText.innerHTML = score;
+        scoreText.style.color = "blue";
+        scoreText.style.fontSize = "70px";
+
+
+
+        function count(num, color) {
+            score += num;
+            scoreText.style.color = color;
+            scoreText.innerHTML = score;
+
+            hpBar.style.width = score + 'px';
+        }
+
+
+
+    </script>
+
+
+</body>
+</html>
